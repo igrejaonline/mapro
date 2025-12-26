@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAPRO | Ministério Apostólico Caminho Profético</title>
 
+<link rel="icon" type="image/jpeg" href="img/logomapro.jpeg">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 :root{
   --azul: #0a3552;
@@ -52,17 +56,19 @@ nav a{
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* HERO */
+/* HERO - Altura Vertical Reduzida */
 .hero{
-  margin-top: 65px; height: 60vh;
+  margin-top: 65px; 
+  height: 35vh; 
+  width: 100%; 
   background: radial-gradient(circle at center, var(--azul) 0%, var(--escuro) 100%);
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   text-align: center; padding: 20px;
   border-bottom: 2px solid var(--dourado);
 }
 
-.hero h1{ font-size: 3.5rem; color: var(--dourado); letter-spacing: 4px; text-shadow: 0 0 20px rgba(212,175,55,0.3); }
-.hero p{ font-size: 1.1rem; color: var(--cinza); text-transform: uppercase; letter-spacing: 2px; }
+.hero h1{ font-size: 3rem; color: var(--dourado); letter-spacing: 4px; text-shadow: 0 0 20px rgba(212,175,55,0.3); }
+.hero p{ font-size: 1rem; color: var(--cinza); text-transform: uppercase; letter-spacing: 2px; }
 
 /* SEÇÕES */
 section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
@@ -79,12 +85,8 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
 /* LIDERANÇA */
 .apostolo-flex { display: flex; flex-direction: column; align-items: center; gap: 30px; }
 .apostolo-img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-  border: 2px solid var(--dourado);
+  width: 100%; max-width: 350px; height: auto;
+  border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 2px solid var(--dourado);
 }
 
 /* AGENDA */
@@ -94,12 +96,12 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
 .card-info { padding: 20px; text-align: center; }
 .card h4 { color: var(--dourado); font-size: 1.2rem; }
 
-/* CONTATO E BOTÕES */
+/* BOTÕES E ÍCONES */
 .cta { display: flex; flex-direction: column; gap: 15px; align-items: center; }
 .btn {
   width: 100%; max-width: 320px; padding: 16px; border-radius: 50px;
   text-decoration: none; font-weight: bold; text-align: center; transition: 0.3s;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
 }
 .btn-gold { border: 2px solid var(--dourado); color: var(--branco); }
 .btn-gold:hover { background: var(--dourado); color: var(--escuro); }
@@ -110,18 +112,26 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
 .btn-wpp { background: #25d366; color: white; border: 2px solid #25d366; }
 .btn-wpp:hover { background: transparent; color: #25d366; }
 
-.qr-img { width: 180px; border: 8px solid #fff; border-radius: 10px; margin-top: 15px; }
+/* QR Code e Informações PIX */
+.qr-box { text-align: center; margin-top: 60px; }
+.qr-img { width: 180px; border: 8px solid #fff; border-radius: 10px; margin-bottom: 10px; }
+.chave-pix { color: var(--branco); font-weight: bold; letter-spacing: 1px; display: block; margin-top: 5px; }
+.apoio-texto { color: var(--branco); font-size: 0.9rem; margin-top: 8px; display: block; }
 
 footer{
-  background: #000; padding: 30px 20px; text-align: center; font-size: 0.85rem; color: #666;
+  background: #000; padding: 40px 20px; text-align: center; font-size: 0.9rem; color: #888;
   border-top: 1px solid rgba(212, 175, 55, 0.1);
 }
+
+.footer-socials { margin-bottom: 20px; display: flex; justify-content: center; gap: 25px; }
+.footer-socials a { color: var(--branco); text-decoration: none; font-size: 1.5rem; transition: 0.3s; }
+.footer-socials a:hover { color: var(--dourado); }
 
 @media(min-width:900px){
   nav{ display: flex !important; position: static; background: none; width: auto; }
   nav a{ border: none; padding: 10px 20px; font-size: 0.9rem; }
   .menu-btn{ display: none; }
-  .hero h1 { font-size: 5rem; }
+  .hero h1 { font-size: 4rem; }
   .apostolo-flex { flex-direction: row; text-align: left; }
 }
 </style>
@@ -136,14 +146,14 @@ footer{
     <a href="#sobre" onclick="toggleMenu()">Propósitos</a>
     <a href="#apostolo" onclick="toggleMenu()">Liderança</a>
     <a href="#agenda" onclick="toggleMenu()">Agenda</a>
-    <a href="#contato" onclick="toggleMenu()">Acessar Cultos</a>
+    <a href="#contato" onclick="toggleMenu()">Cultos</a>
   </nav>
 </header>
 
 <section class="hero" id="inicio">
   <h1>MAPRO</h1>
   <p>Ministério Apostólico Caminho Profético</p>
-  <span style="color: var(--dourado); margin-top: 20px; font-size: 0.9rem;">Uma Igreja 100% Online</span>
+  <span style="color: var(--dourado); margin-top: 10px; font-size: 0.9rem; font-weight: bold;">IGREJA 100% ONLINE</span>
 </section>
 
 <section id="sobre">
@@ -164,7 +174,7 @@ footer{
       <h2 class="title" style="text-align: left; margin-bottom: 20px;">Liderança</h2>
       <h3 style="color: var(--dourado); font-size: 1.5rem;">Apóstolo Michel Breno</h3>
       <p style="color: var(--cinza); margin-top: 10px;">
-        Levantado por Deus com autoridade apostólica e unção profética para conduzir a Igreja ao alinhamento espiritual e revelação da Palavra através do ambiente digital.
+        Levantado por Deus com autoridade apostólica e unção profética para conduzir a Igreja ao alinhamento espiritual e revelação da Palavra.
       </p>
     </div>
   </div>
@@ -195,25 +205,36 @@ footer{
   
   <div class="cta">
     <a href="https://youtube.com/@apmichelbreno" target="_blank" class="btn btn-yt">
-       Inscreva-se no YouTube
+       <i class="fab fa-youtube"></i> Inscreva-se no YouTube
     </a>
 
-    <a href="https://instagram.com/mapro.brasil" target="_blank" class="btn btn-gold">Instagram MAPRO</a>
-    <a href="https://instagram.com/apostolomichelbreno" target="_blank" class="btn btn-gold">Instagram Apóstolo</a>
+    <a href="https://instagram.com/mapro.brasil" target="_blank" class="btn btn-gold">
+       <i class="fab fa-instagram"></i> Instagram MAPRO
+    </a>
+
+    <a href="https://instagram.com/apostolomichelbreno" target="_blank" class="btn btn-gold">
+       <i class="fab fa-instagram"></i> Instagram Apóstolo
+    </a>
     
-    <a href="https://chat.whatsapp.com/FWkipgvy7nH7lV8icxPCMk" target="_blank" class="btn btn-wpp">Grupo de Ativação (WhatsApp)</a>
-    
-    <a href="img/UMA IGREJA COM PROPÓSITO (4).pdf" target="_blank" class="btn btn-gold" style="opacity:0.7; font-size: 0.8rem;">Estudo: Igreja com Propósito (PDF)</a>
+    <a href="https://chat.whatsapp.com/FWkipgvy7nH7lV8icxPCMk" target="_blank" class="btn btn-wpp">
+       <i class="fab fa-whatsapp"></i> Grupo de Ativação
+    </a>
   </div>
 
-  <div style="margin-top: 60px;">
+  <div class="qr-box">
     <h3 style="color: var(--dourado);">Contribua com o Reino</h3>
     <img src="img/qrcode.jpeg" alt="Pix QR Code" class="qr-img">
-    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--cinza);">Apoie este ministério 100% online via PIX</p>
+    <span class="chave-pix">caminhoprofetico@outlook.com</span>
+    <span class="apoio-texto">Apoie este ministério 100% online via PIX</span>
   </div>
 </section>
 
 <footer>
+  <div class="footer-socials">
+    <a href="https://instagram.com/mapro.brasil" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@apmichelbreno" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://chat.whatsapp.com/FWkipgvy7nH7lV8icxPCMk" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
   © 2025 MAPRO – Ministério Apostólico Caminho Profético<br>
   Uma igreja dirigida por propósitos bíblicos.
 </footer>
