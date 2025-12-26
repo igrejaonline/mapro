@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MAPRO | Ministério Apostólico Caminho Profético</title>
+
+<meta name="description" content="MAPRO – Ministério Apostólico Caminho Profético. Liderado pelo Apóstolo Michel Breno. Cultos online, noite profética, ensino e ativação espiritual.">
+
+<style>
+:root{
+  --azul:#0a3552;
+  --dourado:#d4af37;
+  --branco:#ffffff;
+  --escuro:#050f18;
+  --cinza:#cfcfcf;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body{
+  background:linear-gradient(180deg, var(--escuro), var(--azul));
+  color:var(--branco);
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+}
+
+header img{
+  height:48px;
+}
+
+.menu-btn{
+  font-size:26px;
+  cursor:pointer;
+}
+
+nav{
+  display:none;
+  position:absolute;
+  top:65px;
+  left:0;
+  width:100%;
+  background:#000;
+}
+
+nav a{
+  display:block;
+  padding:16px;
+  text-decoration:none;
+  color:var(--branco);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav a:hover{
+  color:var(--dourado);
+}
+
+/* HERO */
+.hero{
+  margin-top:70px;
+  background:url('profetica.jpeg') center/cover no-repeat;
+  padding:100px 20px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:2.6rem;
+  color:var(--dourado);
+  text-shadow:0 0 15px #000;
+}
+
+.hero p{
+  margin-top:14px;
+  font-size:1.1rem;
+  color:var(--cinza);
+}
+
+/* SECTION */
+section{
+  padding:60px 20px;
+}
+
+.title{
+  text-align:center;
+  font-size:2rem;
+  color:var(--dourado);
+  margin-bottom:35px;
+}
+
+/* SOBRE */
+.sobre p{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  line-height:1.7;
+  color:var(--cinza);
+}
+
+/* APÓSTOLO */
+.apostolo img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 0 35px rgba(212,175,55,0.4);
+  margin-bottom:25px;
+}
+
+.apostolo h3{
+  text-align:center;
+  font-size:1.5rem;
+  color:var(--dourado);
+}
+
+.apostolo p{
+  text-align:center;
+  margin-top:15px;
+  line-height:1.7;
+  color:var(--cinza);
+}
+
+/* AGENDA */
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(212,175,55,0.35);
+  border-radius:18px;
+  margin-bottom:30px;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+}
+
+.card div{
+  padding:22px;
+}
+
+.card h4{
+  color:var(--dourado);
+  font-size:1.3rem;
+}
+
+/* CTA */
+.cta a{
+  display:block;
+  margin:14px auto;
+  max-width:360px;
+  text-align:center;
+  padding:15px;
+  border-radius:40px;
+  border:2px solid var(--dourado);
+  text-decoration:none;
+  color:var(--branco);
+  font-weight:600;
+  transition:.3s;
+}
+
+.cta a:hover{
+  background:var(--dourado);
+  color:#000;
+}
+
+/* QR */
+.qr{
+  text-align:center;
+}
+
+.qr img{
+  width:220px;
+  margin-top:18px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+  font-size:0.85rem;
+  color:#aaa;
+}
+
+/* DESKTOP */
+@media(min-width:900px){
+  .hero h1{font-size:3.4rem;}
+  section{max-width:1100px;margin:auto;}
+  nav{
+    display:flex !important;
+    position:static;
+    background:none;
+    width:auto;
+  }
+  nav a{
+    border:none;
+  }
+  .menu-btn{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logomapro.jpeg" alt="MAPRO">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <nav id="menu">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#apostolo">Apóstolo</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <h1>MAPRO</h1>
+  <p>Ministério Apostólico Caminho Profético</p>
+</section>
+
+<section id="sobre" class="sobre">
+  <h2 class="title">Nossa Missão</h2>
+  <p>
+    O MAPRO existe para conduzir o povo de Deus no caminho profético,
+    ativando dons espirituais, revelação bíblica e intimidade com o Espírito Santo,
+    preparando a Igreja para viver os propósitos eternos do Senhor.
+  </p>
+</section>
+
+<section id="apostolo" class="apostolo">
+  <h2 class="title">Liderança Apostólica</h2>
+  <img src="apostolo.png" alt="Apóstolo Michel Breno">
+  <h3>Apóstolo Michel Breno</h3>
+  <p>
+    Levantado por Deus com autoridade apostólica e unção profética,
+    conduzindo vidas ao alinhamento espiritual, maturidade e revelação.
+  </p>
+</section>
+
+<section id="agenda">
+  <h2 class="title">Agenda Online</h2>
+
+  <div class="card">
+    <img src="culto.jpeg">
+    <div>
+      <h4>Culto Online</h4>
+      <p>Quarta-feira • 21:00h</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="profetica.jpeg">
+    <div>
+      <h4>Noite Profética</h4>
+      <p>Sexta-feira • 22:00h</p>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <h2 class="title">Conecte-se</h2>
+
+  <div class="cta">
+    <a href="https://instagram.com/mapro.brasil" target="_blank">Instagram MAPRO</a>
+    <a href="https://instagram.com/apostolomichelbreno" target="_blank">Instagram Apóstolo</a>
+    <a href="https://youtube.com/@apmichelbreno" target="_blank">Canal no YouTube</a>
+    <a href="https://chat.whatsapp.com/FWkipgvy7nH7lV8icxPCM" target="_blank">Grupo WhatsApp</a>
+  </div>
+
+  <div class="qr">
+    <p>Entre pelo QR Code</p>
+    <img src="qrcode.jpeg">
+  </div>
+</section>
+
+<footer>
+  © 2025 MAPRO – Ministério Apostólico Caminho Profético<br>
+  Todos os direitos reservados
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById('menu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+</body>
+</html>
