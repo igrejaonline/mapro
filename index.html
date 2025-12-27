@@ -101,7 +101,12 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
     transition: transform 0.3s;
 }
 .card:hover { transform: translateY(-5px); }
-.card img { width: 100%; height: 220px; object-fit: cover; }
+.card img { 
+  width: 100%; 
+  height: 220px; 
+  object-fit: cover; 
+  object-position: top; /* AJUSTE PARA NÃO CORTAR A CABEÇA */
+}
 .card-info { padding: 20px; text-align: center; }
 .card h4 { color: var(--dourado); font-size: 1.2rem; margin-bottom: 5px; }
 
