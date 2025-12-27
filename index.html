@@ -89,7 +89,7 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
   border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 2px solid var(--dourado);
 }
 
-/* GRID CARDS (Agenda e Formação) */
+/* GRID CARDS */
 .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
 .card { 
     background: var(--glass); 
@@ -105,8 +105,12 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
   width: 100%; 
   height: 220px; 
   object-fit: cover; 
-  object-position: top; /* AJUSTE PARA NÃO CORTAR A CABEÇA */
 }
+
+/* AJUSTES DE POSIÇÃO DE IMAGEM ESPECÍFICOS */
+.img-center { object-position: center !important; } /* Para Agenda */
+.img-top { object-position: top !important; }    /* Para Cursos */
+
 .card-info { padding: 20px; text-align: center; }
 .card h4 { color: var(--dourado); font-size: 1.2rem; margin-bottom: 5px; }
 
@@ -199,14 +203,14 @@ footer{
   <h2 class="title">Agenda Online</h2>
   <div class="grid-cards">
     <div class="card">
-      <img src="img/culto.jpeg" alt="Culto de Celebração">
+      <img src="img/culto.jpeg" alt="Culto de Celebração" class="img-center">
       <div class="card-info">
         <h4>Culto de Celebração</h4>
         <p>Quarta-feira • 21:00h</p>
       </div>
     </div>
     <div class="card">
-      <img src="img/profetica.jpeg" alt="Noite Profética">
+      <img src="img/profetica.jpeg" alt="Noite Profética" class="img-center">
       <div class="card-info">
         <h4>Noite Profética</h4>
         <p>Sexta-feira • 22:00h</p>
@@ -241,14 +245,14 @@ footer{
   <h2 class="title">Formação Online</h2>
   <div class="grid-cards">
     <a href="https://pay.kiwify.com.br/npgKy38" target="_blank" class="card">
-      <img src="img/despertar.jpeg" alt="Despertar Profético">
+      <img src="img/despertar.jpeg" alt="Despertar Profético" class="img-top">
       <div class="card-info">
         <h4>Despertar Profético</h4>
         <p>Acesse o treinamento</p>
       </div>
     </a>
     <a href="https://pay.kiwify.com.br/cprgj0B" target="_blank" class="card">
-      <img src="img/desvendando.jpeg" alt="Desvendando os Sonhos">
+      <img src="img/desvendando.jpeg" alt="Desvendando os Sonhos" class="img-top">
       <div class="card-info">
         <h4>Desvendando os Sonhos</h4>
         <p>Acesse o treinamento</p>
