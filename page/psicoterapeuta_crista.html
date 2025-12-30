@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliane Cristina | Psicoterapeuta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* DESIGN SYSTEM - EXTRAÍDO DO BRIEFING */
+        :root {
+            --bg-color: #F7F3F1;      /* Off-white/Bege da arte */
+            --primary-brown: #4A362D; /* Marrom Café Profundo */
+            --accent-gray: #A0918C;   /* Cinza acastanhado // */
+            --white: #ffffff;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-brown);
+            overflow-x: hidden;
+        }
+
+        /* HERO SECTION - REPRODUZINDO A ARTE */
+        .hero-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 100px 5%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            align-items: center;
+            max-width: 1400px;
+            width: 100%;
+            gap: 20px;
+        }
+
+        /* COLUNAS DE TEXTO (BASEADAS NA IMAGEM) */
+        .text-block {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .phrase {
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .phrase span {
+            color: var(--accent-gray);
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* IMAGEM CENTRAL */
+        .image-center {
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-photo {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1));
+            z-index: 2;
+        }
+
+        .name-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 0.9;
+            margin-top: -40px;
+            z-index: 3;
+            text-transform: none;
+        }
+
+        /* TICKER / MARQUEE (QUEM SOU EU) */
+        .ticker {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            opacity: 0.4;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--accent-gray);
+        }
+
+        /* BOTÃO QUIET LUXURY */
+        .cta-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 99;
+        }
+
+        .btn-luxury {
+            text-decoration: none;
+            color: var(--primary-brown);
+            border: 1px solid var(--primary-brown);
+            padding: 15px 35px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: transparent;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-luxury:hover {
+            background: var(--primary-brown);
+            color: var(--bg-color);
+            transform: translateY(-5px);
+        }
+
+        /* RESPONSIVIDADE MOBILE (BRIEFING CLARA) */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .image-center {
+                order: -1;
+                margin-bottom: 40px;
+            }
+            .text-block {
+                gap: 30px;
+            }
+            .name-brand {
+                margin-top: 10px;
+            }
+            .cta-float {
+                bottom: 20px;
+                right: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            .btn-luxury {
+                background: var(--primary-brown);
+                color: var(--bg-color);
+                width: 90%;
+                text-align: center;
+            }
+        }
+
+        /* ANIMAÇÕES DE ENTRADA */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* RODAPÉ MODIFICADO */
+        footer {
+            background-color: var(--white);
+            padding: 60px 5% 40px;
+            border-top: 1px solid rgba(74, 54, 45, 0.1);
+        }
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .footer-brand h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.8rem; 
+            margin-bottom: 15px; 
+        }
+        .footer-brand p { 
+            font-size: 0.9rem; 
+            color: var(--accent-gray); 
+            margin-bottom: 25px;
+        }
+        .mapro-icon-footer {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 1px solid rgba(74, 54, 45, 0.1);
+        }
+        .social-icons { 
+            display: flex; 
+            justify-content: center;
+            gap: 25px; 
+            margin-bottom: 40px;
+        }
+        .social-icons a { 
+            color: var(--primary-brown); 
+            font-size: 1.3rem; 
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            color: var(--accent-gray);
+        }
+        .footer-bottom { 
+            border-top: 1px solid rgba(74, 54, 45, 0.05); 
+            padding-top: 30px; 
+            font-size: 0.75rem; 
+            color: var(--accent-gray); 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ticker">
+        //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp;
+    </div>
+
+    <section class="hero-container">
+        <div class="hero-content">
+            <div class="text-block">
+                <p class="phrase reveal" style="transition-delay: 0.2s;">
+                    <span>//</span> Amo ouvir histórias e ajudar pessoas a escreverem novas versões delas mesmas.
+                </p>
+                <p class="phrase reveal" style="transition-delay: 0.4s;">
+                    <span>//</span> Sempre em busca de equilíbrio entre razão e emoção.
+                </p>
+                <p class="phrase reveal" style="transition-delay: 0.6s;">
+                    <span>//</span> Reflexão e natureza são meus refúgios preferidos.
+                </p>
+            </div>
+            <div class="image-center reveal" style="transition-delay: 0.1s;">
+                <img src="https://igrejaonline.github.io/mapro/img/eliane-cristina.png" alt="Eliane Cristina" class="main-photo">
+                <h1 class="name-brand">Eliane<br>Cristina</h1>
+            </div>
+            <div class="text-block">
+                <p class="phrase reveal" style="transition-delay: 0.8s;">
+                    <span>//</span> Psicoterapeuta e apaixonada por comportamento humano.
+                </p>
+                <p class="phrase reveal" style="transition-delay: 1s;">
+                    <span>//</span> Acredito que autoconhecimento é o caminho para qualquer mudança.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-float">
+        <a href="https://wa.me/5527998801775" target="_blank" class="btn-luxury">Iniciar Jornada de Autoconhecimento</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://igrejaonline.github.io/mapro/img/logomapro.jpeg" alt="MAPRO" class="mapro-icon-footer">
+            <div class="footer-brand">
+                <h2>Eliane Cristina</h2>
+                <p>Psicoterapia humanizada para a sua evolução pessoal.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/elianecristina_terapeuta/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5527998801775" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Designed by Strauz Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito de Revelação (Scroll e Load)
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            setTimeout(() => {
+                reveals.forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                    el.style.transition = 'all 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+                });
+            }, 100);
+        });
+
+        // Efeito Parallax Suave no Nome ao mover o mouse
+        document.addEventListener('mousemove', (e) => {
+            const name = document.querySelector('.name-brand');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            if(name) name.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+    </script>
+</body>
+</html>
