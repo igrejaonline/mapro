@@ -8,74 +8,148 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* DESIGN SYSTEM - EXTRAÍDO DO BRIEFING */
         :root {
-            --bg-color: #F7F3F1;      /* Off-white/Bege da arte */
-            --primary-brown: #4A362D; /* Marrom Café Profundo */
-            --accent-gray: #A0918C;   /* Cinza acastanhado // */
+            --bg-color: #F7F3F1;
+            --primary-brown: #4A362D; 
+            --accent-gray: #A0918C;   
             --white: #ffffff;
             --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='50' font-family='Montserrat' font-size='8' fill='%234A362D' fill-opacity='0.03'%3E//%3C/text%3E%3C/svg%3E");
             font-family: 'Montserrat', sans-serif;
             color: var(--primary-brown);
             overflow-x: hidden;
         }
 
-        /* HERO SECTION - REPRODUZINDO A ARTE */
-        .hero-container {
-            min-height: 100vh;
+        .utility-bar {
+            background-color: var(--primary-brown);
+            color: var(--bg-color);
+            text-align: center;
+            padding: 8px 5%;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-header {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header-logo a { display: block; line-height: 0; }
+        .header-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .header-logo img:hover { transform: scale(1.05); }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-brown);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 300;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { opacity: 0.5; }
+
+        .hero-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 100px 5%;
+            padding: 20px 5% 100px;
+        }
+
+        .ticker-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .ticker-static {
+            display: inline-block;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--primary-brown);
+            font-weight: 400;
         }
 
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1.2fr 1fr;
-            align-items: center;
+            align-items: flex-start;
             max-width: 1400px;
             width: 100%;
             gap: 20px;
+            margin-top: 20px;
         }
 
-        /* COLUNAS DE TEXTO (BASEADAS NA IMAGEM) */
-        .text-block {
-            display: flex;
-            flex-direction: column;
+        .text-block { 
+            display: flex; 
+            flex-direction: column; 
             gap: 40px;
+            margin-top: 105px; 
         }
 
-        .phrase {
-            position: relative;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            font-weight: 300;
+        .phrase { position: relative; font-size: 1.1rem; line-height: 1.5; font-weight: 300; }
+        .phrase span { color: var(--primary-brown); font-weight: bold; margin-right: 5px; }
+
+        /* AJUSTE DO BOTÃO INSTAGRAM PARA NIVELAR COM A FRASE OPOSTA */
+        .insta-link-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary-brown);
+            margin-top: -15px; /* Subindo para alinhar com a frase da esquerda */
+            transition: var(--transition);
+        }
+        .insta-link-block i {
+            font-size: 1.8rem;
+        }
+        .insta-link-block span {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+        .insta-link-block:hover {
+            transform: translateX(5px);
+            opacity: 0.7;
         }
 
-        .phrase span {
-            color: var(--accent-gray);
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        /* IMAGEM CENTRAL */
         .image-center {
             position: relative;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .name-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 0.9;
+            margin-bottom: -30px;
+            z-index: 3;
+            text-transform: none;
+            position: relative;
         }
 
         .main-photo {
@@ -85,153 +159,81 @@
             z-index: 2;
         }
 
-        .name-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            line-height: 0.9;
-            margin-top: -40px;
-            z-index: 3;
-            text-transform: none;
-        }
-
-        /* TICKER / MARQUEE (QUEM SOU EU) */
-        .ticker {
-            position: absolute;
-            top: 10%;
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            opacity: 0.4;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: var(--accent-gray);
-        }
-
-        /* BOTÃO QUIET LUXURY */
-        .cta-float {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            z-index: 99;
-        }
+        .cta-float { position: fixed; bottom: 40px; right: 40px; z-index: 99; }
 
         .btn-luxury {
             text-decoration: none;
-            color: var(--primary-brown);
+            color: var(--bg-color);
+            background-color: var(--primary-brown);
             border: 1px solid var(--primary-brown);
             padding: 15px 35px;
             font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            background: transparent;
             transition: var(--transition);
             display: inline-block;
+            box-shadow: 0 10px 25px rgba(74, 54, 45, 0.2);
         }
 
         .btn-luxury:hover {
-            background: var(--primary-brown);
-            color: var(--bg-color);
+            background: transparent;
+            color: var(--primary-brown);
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(74, 54, 45, 0.1);
         }
 
-        /* RESPONSIVIDADE MOBILE (BRIEFING CLARA) */
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .image-center {
-                order: -1;
-                margin-bottom: 40px;
-            }
-            .text-block {
-                gap: 30px;
-            }
-            .name-brand {
-                margin-top: 10px;
-            }
-            .cta-float {
-                bottom: 20px;
-                right: 0;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-            .btn-luxury {
-                background: var(--primary-brown);
-                color: var(--bg-color);
-                width: 90%;
-                text-align: center;
-            }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; }
+            .image-center { order: -1; margin-bottom: 60px; }
+            .name-brand { margin-bottom: -20px; }
+            .text-block { margin-top: 0; }
+            .insta-link-block { justify-content: center; margin-top: 20px; }
+            .cta-float { bottom: 20px; right: 0; width: 100%; display: flex; justify-content: center; }
+            .btn-luxury { width: 90%; text-align: center; }
         }
 
-        /* ANIMAÇÕES DE ENTRADA */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-        }
+        .reveal { opacity: 0; transform: translateY(20px); }
 
-        /* RODAPÉ MODIFICADO */
         footer {
             background-color: var(--white);
             padding: 60px 5% 40px;
             border-top: 1px solid rgba(74, 54, 45, 0.1);
         }
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .footer-brand h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.8rem; 
-            margin-bottom: 15px; 
-        }
-        .footer-brand p { 
-            font-size: 0.9rem; 
-            color: var(--accent-gray); 
-            margin-bottom: 25px;
-        }
-        .mapro-icon-footer {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 1px solid rgba(74, 54, 45, 0.1);
-        }
-        .social-icons { 
-            display: flex; 
-            justify-content: center;
-            gap: 25px; 
-            margin-bottom: 40px;
-        }
-        .social-icons a { 
-            color: var(--primary-brown); 
-            font-size: 1.3rem; 
-            transition: 0.3s;
-        }
-        .social-icons a:hover {
-            transform: translateY(-3px);
-            color: var(--accent-gray);
-        }
-        .footer-bottom { 
-            border-top: 1px solid rgba(74, 54, 45, 0.05); 
-            padding-top: 30px; 
-            font-size: 0.75rem; 
-            color: var(--accent-gray); 
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+        .footer-content { max-width: 1400px; margin: 0 auto; text-align: center; }
+        .footer-brand h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; }
+        .footer-brand p { font-size: 0.9rem; color: var(--primary-brown); margin-bottom: 25px; }
+        
+        .social-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 40px; }
+        .social-icons a { color: var(--primary-brown); font-size: 1.3rem; transition: 0.3s; }
+        .social-icons a:hover { transform: translateY(-3px); color: var(--accent-gray); }
+        
+        .footer-bottom { border-top: 1px solid rgba(74, 54, 45, 0.05); padding-top: 30px; font-size: 0.75rem; color: var(--accent-gray); letter-spacing: 1px; text-transform: uppercase; }
     </style>
 </head>
 
 <body>
 
-    <div class="ticker">
-        //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp; //Quem sou eu &nbsp;
+    <div class="utility-bar">
+        ATENDIMENTO ONLINE PARA TODO O BRASIL
     </div>
 
-    <section class="hero-container">
+    <header class="main-header">
+        <div class="header-logo">
+            <a href="https://igrejaonline.github.io/mapro/">
+                <img src="https://igrejaonline.github.io/mapro/img/logomapro.jpeg" alt="MAPRO">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="https://wa.me/5527998801775">Contato</a>
+        </nav>
+    </header>
+
+    <main class="hero-container">
+        <div class="ticker-container">
+            <div class="ticker-static">// Quem sou eu &nbsp; // Quem sou eu &nbsp; // Quem sou eu &nbsp; // Quem sou eu &nbsp; // Quem sou eu</div>
+        </div>
+
         <div class="hero-content">
             <div class="text-block">
                 <p class="phrase reveal" style="transition-delay: 0.2s;">
@@ -244,10 +246,12 @@
                     <span>//</span> Reflexão e natureza são meus refúgios preferidos.
                 </p>
             </div>
+
             <div class="image-center reveal" style="transition-delay: 0.1s;">
-                <img src="https://igrejaonline.github.io/mapro/img/eliane-cristina.png" alt="Eliane Cristina" class="main-photo">
                 <h1 class="name-brand">Eliane<br>Cristina</h1>
+                <img src="https://igrejaonline.github.io/mapro/img/eliane-cristina.png" alt="Eliane Cristina" class="main-photo">
             </div>
+
             <div class="text-block">
                 <p class="phrase reveal" style="transition-delay: 0.8s;">
                     <span>//</span> Psicoterapeuta e apaixonada por comportamento humano.
@@ -255,17 +259,20 @@
                 <p class="phrase reveal" style="transition-delay: 1s;">
                     <span>//</span> Acredito que autoconhecimento é o caminho para qualquer mudança.
                 </p>
+                <a href="https://www.instagram.com/elianecristina_terapeuta/" target="_blank" class="insta-link-block reveal" style="transition-delay: 1.2s;">
+                    <i class="fab fa-instagram"></i>
+                    <span>Acompanhe no Instagram @elianecristina_terapeuta</span>
+                </a>
             </div>
         </div>
-    </section>
+    </main>
 
     <div class="cta-float">
-        <a href="https://wa.me/5527998801775" target="_blank" class="btn-luxury">Iniciar Jornada de Autoconhecimento</a>
+        <a href="https://wa.me/5527998801775" target="_blank" class="btn-luxury">Agende seu acolhimento</a>
     </div>
 
     <footer>
         <div class="footer-content">
-            <img src="https://igrejaonline.github.io/mapro/img/logomapro.jpeg" alt="MAPRO" class="mapro-icon-footer">
             <div class="footer-brand">
                 <h2>Eliane Cristina</h2>
                 <p>Psicoterapia humanizada para a sua evolução pessoal.</p>
@@ -281,7 +288,6 @@
     </footer>
 
     <script>
-        // Efeito de Revelação (Scroll e Load)
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.reveal');
             setTimeout(() => {
@@ -293,12 +299,11 @@
             }, 100);
         });
 
-        // Efeito Parallax Suave no Nome ao mover o mouse
         document.addEventListener('mousemove', (e) => {
             const name = document.querySelector('.name-brand');
             const x = (window.innerWidth / 2 - e.pageX) / 50;
             const y = (window.innerHeight / 2 - e.pageY) / 50;
-            if(name) name.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            if(name && window.innerWidth > 1024) name.style.transform = `translateX(${x}px) translateY(${y}px)`;
         });
     </script>
 </body>
