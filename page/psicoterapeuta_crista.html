@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliane Cristina | Psicoterapeuta</title>
+
+    <meta property="og:title" content="Eliane Cristina | Psicoterapeuta">
+    <meta property="og:description" content="Psicoterapia humanizada para a sua evolução pessoal. Atendimento online para todo o Brasil.">
+    <meta property="og:image" content="https://igrejaonline.github.io/mapro/img/eliane-cristina.png">
+    <meta property="og:url" content="https://igrejaonline.github.io/mapro/">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/jpeg" href="https://igrejaonline.github.io/mapro/img/logomapro.jpeg">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -111,18 +120,19 @@
         .phrase { position: relative; font-size: 1.1rem; line-height: 1.5; font-weight: 300; }
         .phrase span { color: var(--primary-brown); font-weight: bold; margin-right: 5px; }
 
-        /* AJUSTE DO BOTÃO INSTAGRAM PARA NIVELAR COM A FRASE OPOSTA */
+        /* AJUSTE DO BOTÃO INSTAGRAM PARA EFEITO IGUAL AO DO RODAPÉ */
         .insta-link-block {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
             color: var(--primary-brown);
-            margin-top: -15px; /* Subindo para alinhar com a frase da esquerda */
-            transition: var(--transition);
+            margin-top: -15px; 
+            transition: 0.3s;
         }
         .insta-link-block i {
-            font-size: 1.8rem;
+            font-size: 1.3rem; /* Tamanho igual ao rodapé */
+            transition: 0.3s;
         }
         .insta-link-block span {
             font-size: 0.85rem;
@@ -130,8 +140,11 @@
             font-weight: 400;
         }
         .insta-link-block:hover {
-            transform: translateX(5px);
-            opacity: 0.7;
+            color: var(--accent-gray);
+        }
+        .insta-link-block:hover i {
+            transform: translateY(-3px);
+            color: var(--accent-gray);
         }
 
         .image-center {
