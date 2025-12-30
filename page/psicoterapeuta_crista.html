@@ -120,31 +120,35 @@
         .phrase { position: relative; font-size: 1.1rem; line-height: 1.5; font-weight: 300; }
         .phrase span { color: var(--primary-brown); font-weight: bold; margin-right: 5px; }
 
-        /* AJUSTE DO BOTÃO INSTAGRAM PARA EFEITO IGUAL AO DO RODAPÉ */
+        /* SOLUÇÃO DEFINITIVA PARA O BOTÃO INSTAGRAM */
+        .insta-wrapper {
+            margin-top: -15px; 
+            display: inline-block;
+        }
+
         .insta-link-block {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
             color: var(--primary-brown);
-            margin-top: -15px; 
-            transition: 0.3s;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
+
         .insta-link-block i {
-            font-size: 1.3rem; /* Tamanho igual ao rodapé */
-            transition: 0.3s;
+            font-size: 1.3rem;
         }
+
         .insta-link-block span {
             font-size: 0.85rem;
             letter-spacing: 1px;
             font-weight: 400;
         }
+
+        /* O efeito de hover agora aplica o movimento ao conjunto todo */
         .insta-link-block:hover {
             color: var(--accent-gray);
-        }
-        .insta-link-block:hover i {
-            transform: translateY(-3px);
-            color: var(--accent-gray);
+            transform: translateY(-5px) !important;
         }
 
         .image-center {
@@ -201,7 +205,8 @@
             .image-center { order: -1; margin-bottom: 60px; }
             .name-brand { margin-bottom: -20px; }
             .text-block { margin-top: 0; }
-            .insta-link-block { justify-content: center; margin-top: 20px; }
+            .insta-wrapper { width: 100%; text-align: center; margin-top: 20px; }
+            .insta-link-block { justify-content: center; }
             .cta-float { bottom: 20px; right: 0; width: 100%; display: flex; justify-content: center; }
             .btn-luxury { width: 90%; text-align: center; }
         }
@@ -272,10 +277,12 @@
                 <p class="phrase reveal" style="transition-delay: 1s;">
                     <span>//</span> Acredito que autoconhecimento é o caminho para qualquer mudança.
                 </p>
-                <a href="https://www.instagram.com/elianecristina_terapeuta/" target="_blank" class="insta-link-block reveal" style="transition-delay: 1.2s;">
-                    <i class="fab fa-instagram"></i>
-                    <span>Acompanhe no Instagram @elianecristina_terapeuta</span>
-                </a>
+                <div class="insta-wrapper reveal" style="transition-delay: 1.2s;">
+                    <a href="https://www.instagram.com/elianecristina_terapeuta/" target="_blank" class="insta-link-block">
+                        <i class="fab fa-instagram"></i>
+                        <span>Acompanhe no Instagram @elianecristina_terapeuta</span>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
