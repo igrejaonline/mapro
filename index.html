@@ -89,6 +89,24 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
   border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 2px solid var(--dourado);
 }
 
+/* ESTILO INSTAGRAM DISCRETO */
+.insta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--dourado);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.insta-link:hover {
+  border-bottom-color: var(--dourado);
+  opacity: 0.8;
+}
+
 /* GRID CARDS */
 .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
 .card { 
@@ -144,7 +162,7 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
 .float-btn {
   pointer-events: auto;
   flex: 1;
-  max-width: 170px; /* Largura reduzida para caber os dois lado a lado em mobile */
+  max-width: 170px; 
   margin: 0 5px;
   font-size: 0.85rem;
   padding: 12px;
@@ -207,6 +225,9 @@ footer{
       <p style="color: var(--cinza); margin-top: 10px;">
         Levantado pelo Senhor Jesus com autoridade apostólica e unção profética para conduzir a Igreja ao alinhamento espiritual e revelação da Palavra.
       </p>
+      <a href="https://instagram.com/apostolomichelbreno" target="_blank" class="insta-link">
+        <i class="fab fa-instagram"></i> Acompanhe no Instagram: @apostolomichelbreno
+      </a>
     </div>
   </div>
 </section>
@@ -219,6 +240,11 @@ footer{
     <div class="pilar-card"><strong>Evangelismo</strong> Alcançar nações</div>
     <div class="pilar-card"><strong>Comunhão</strong> Família espiritual</div>
     <div class="pilar-card"><strong>Discipulado</strong> Maturidade cristã</div>
+  </div>
+  <div style="text-align: center;">
+    <a href="https://instagram.com/mapro.brasil" target="_blank" class="insta-link">
+      <i class="fab fa-instagram"></i> Acompanhe no Instagram: @mapro.brasil
+    </a>
   </div>
 </section>
 
