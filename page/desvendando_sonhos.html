@@ -51,7 +51,44 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 1000;
         }
 
-        .logo img { height: 50px; border-radius: 5px; }
+        .logo img { height: 50px; border-radius: 5px; display: block; }
+
+        /* ESTILO DO BOTÃO DE INSCRIÇÃO SUPERIOR (COM ANIMAÇÃO CONTÍNUA) */
+        .header-btn {
+            /* Uso de gradiente para melhor efeito de brilho */
+            background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
+            color: #000 !important;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* Animação contínua de pulso e brilho */
+            animation: header-pulse-shine 2s infinite ease-in-out;
+        }
+
+        /* Leve aumento de brilho ao passar o mouse, sem interromper a animação */
+        .header-btn:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Keyframes para o pulso e brilho contínuo do botão do header */
+        @keyframes header-pulse-shine {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6); /* Sombra mais intensa para o brilho */
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            }
+        }
 
         /* HERO SECTION */
         .hero {
@@ -95,7 +132,7 @@
         .hero-content h1 { font-size: clamp(2.2rem, 7vw, 3.5rem); margin-bottom: 25px; line-height: 1.1; }
         .hero-content p { font-size: 1.15rem; margin-bottom: 45px; font-weight: 300; }
 
-        /* BOTÃO */
+        /* BOTÃO PRINCIPAL (CTA) */
         .cta-button {
             display: inline-block; padding: 22px 45px;
             background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
@@ -145,6 +182,7 @@
                 <img src="https://igrejaonline.github.io/mapro/img/logomapro.jpeg" alt="Mapro Logo">
             </a>
         </div>
+        <a href="https://pay.kiwify.com.br/cprgj0B" class="header-btn">Inscrição</a>
     </header>
 
     <main>
@@ -202,13 +240,13 @@
             });
         });
 
-        // Header Scroll
+        // Header Scroll Effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.style.background = window.scrollY > 50 ? 'rgba(2, 12, 27, 0.95)' : 'rgba(10, 25, 47, 0.7)';
         });
 
-        // Fade-in
+        // Content Fade-in
         document.addEventListener('DOMContentLoaded', () => {
             const content = document.querySelector('.hero-content');
             content.style.opacity = '0';
