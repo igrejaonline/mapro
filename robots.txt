@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /img/
-Allow: /page/
-
-# Caminho para o Sitemap
-Sitemap: https://igrejaonline.github.io/mapro/sitemap.xml
