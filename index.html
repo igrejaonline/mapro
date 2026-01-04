@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MAPRO | Igreja Online e Escola de Profetas - Apóstolo Michel Breno</title>
-<meta name="description" content="A MAPRO é uma igreja online liderada pelo Apóstolo Michel Breno. Oferecemos treinamentos bíblicos como Despertar Profético e Desvendando os Sonhos. Participe da nossa comunidade ativa.">
-<meta name="keywords" content="igreja online, escola de profetas, ministério apostólico, interpretação de sonhos bíblicos, curso de profeta, Michel Breno, MAPRO">
-<meta name="author" content="MAPRO">
+<title>Ministério Apostólico Michel Breno | Igreja Online e Escola de Profetas</title>
+<meta name="description" content="Portal oficial do Ministério Apostólico Michel Breno. Oferecemos treinamentos bíblicos como Despertar Profético e Desvendando os Sonhos. Participe da nossa comunidade ativa.">
+<meta name="author" content="Ministério Apostólico Michel Breno">
 <meta name="robots" content="index, follow">
 
-<link rel="icon" type="image/jpeg" href="img/logomapro.jpeg">
+<link rel="icon" type="image/jpeg" href="https://igrejaonline.github.io/ministeriomichelbreno/img/logo.jpeg">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script data-goatcounter="https://ministeriomichelbreno.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <style>
 :root{
@@ -36,7 +37,7 @@ body{
   line-height: 1.6;
 }
 
-/* HEADER */
+/* HEADER ORIGINAL */
 header{
   position:fixed; top:0; width:100%; z-index:1000;
   background: rgba(5, 15, 24, 0.95);
@@ -71,8 +72,7 @@ nav a{
   border-bottom: 2px solid var(--dourado);
 }
 
-.hero h1{ font-size: 2.8rem; color: var(--dourado); letter-spacing: 4px; text-shadow: 0 0 20px rgba(212,175,55,0.3); }
-.hero p{ font-size: 0.9rem; color: var(--cinza); text-transform: uppercase; letter-spacing: 2px; }
+.hero h1{ font-size: 2.8rem; color: var(--dourado); letter-spacing: 4px; text-shadow: 0 0 20px rgba(212,175,55,0.3); line-height: 1.2; }
 
 /* SEÇÕES */
 section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
@@ -86,7 +86,7 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
 }
 .pilar-card strong { color: var(--dourado); display: block; margin-bottom: 5px; }
 
-/* LIDERANÇA COM NEON DOURADO */
+/* LIDERANÇA */
 .apostolo-flex { display: flex; flex-direction: column; align-items: center; gap: 30px; }
 .apostolo-img {
   width: 100%; max-width: 350px; height: auto;
@@ -100,7 +100,6 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
   box-shadow: 0 0 25px rgba(212, 175, 55, 0.6), 0 0 50px rgba(212, 175, 55, 0.3);
 }
 
-/* ESTILO INSTAGRAM DISCRETO */
 .insta-link {
   display: inline-flex;
   align-items: center;
@@ -136,7 +135,6 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
   object-fit: cover; 
 }
 
-/* AJUSTES DE POSIÇÃO DE IMAGEM ESPECÍFICOS */
 .img-center { object-position: center !important; } 
 .img-top { object-position: top !important; }    
 
@@ -180,11 +178,30 @@ section{ padding: 60px 20px; max-width: 1100px; margin: auto; }
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* QR Code e Informações PIX */
-.qr-box { text-align: center; margin-top: 40px; }
-.qr-img { width: 180px; border: 8px solid #fff; border-radius: 10px; margin-bottom: 10px; }
-.chave-pix { color: var(--branco); font-weight: bold; letter-spacing: 1px; display: block; margin-top: 5px; }
-.apoio-texto { color: var(--branco); font-size: 0.9rem; margin-top: 8px; display: block; }
+.pix-box { text-align: center; margin-top: 40px; }
+.pix-box h3 { color: var(--dourado); margin-bottom: 20px; text-transform: uppercase; }
+.btn-pix { 
+  background: transparent; 
+  border: 1px solid var(--dourado); 
+  color: var(--dourado); 
+  padding: 12px 30px; 
+  border-radius: 30px; 
+  cursor: pointer; 
+  font-weight: bold; 
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-pix:hover { background: var(--dourado); color: var(--escuro); }
+#pix-confirm { 
+  display: block; 
+  margin-top: 10px; 
+  font-size: 0.85rem; 
+  color: #25d366; 
+  opacity: 0; 
+  transition: 0.3s; 
+}
 
 footer{
   background: #000; padding: 40px 20px; text-align: center; font-size: 0.9rem; color: #888;
@@ -210,7 +227,7 @@ footer{
 <body>
 
 <header>
-  <img src="img/logomapro.jpeg" alt="Logo MAPRO - Ministério Apostólico Caminho Profético">
+  <img src="https://igrejaonline.github.io/ministeriomichelbreno/img/logo.jpeg" alt="Logo Ministério Apostólico Michel Breno">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <nav id="menu">
     <a href="#inicio">Início</a>
@@ -223,14 +240,13 @@ footer{
 </header>
 
 <section class="hero" id="inicio">
-  <h1>MAPRO</h1>
-  <p>Ministério Apostólico Caminho Profético</p>
-  <span style="color: var(--dourado); margin-top: 8px; font-size: 0.85rem; font-weight: bold;">IGREJA 100% ONLINE</span>
+  <h1>Ministério Apostólico <br> Michel Breno</h1>
+  <span style="color: var(--branco); margin-top: 8px; font-size: 0.85rem; font-weight: bold; letter-spacing: 2px;">IGREJA 100% ONLINE</span>
 </section>
 
 <section id="apostolo">
   <div class="apostolo-flex">
-    <img src="img/apostolo.png" alt="Apóstolo Michel Breno - Líder da MAPRO" class="apostolo-img">
+    <img src="https://igrejaonline.github.io/ministeriomichelbreno/img/apostolo.png" alt="Apóstolo Michel Breno" class="apostolo-img">
     <div>
       <h2 class="title" style="text-align: left; margin-bottom: 20px;">Apóstolo Michel Breno</h2>
       <p style="color: var(--cinza); margin-top: 10px;">
@@ -253,8 +269,8 @@ footer{
     <div class="pilar-card"><strong>Discipulado</strong> Maturidade cristã</div>
   </div>
   <div style="text-align: center;">
-    <a href="https://instagram.com/mapro.brasil" target="_blank" class="insta-link">
-      <i class="fab fa-instagram"></i> Acompanhe no Instagram: @mapro.brasil
+    <a href="https://instagram.com/ministeriomichelbreno" target="_blank" class="insta-link">
+      <i class="fab fa-instagram"></i> Acompanhe no Instagram: @ministeriomichelbreno
     </a>
   </div>
 </section>
@@ -263,14 +279,14 @@ footer{
   <h2 class="title">Agenda Online</h2>
   <div class="grid-cards">
     <a href="https://www.youtube.com/@apostolomichelbreno" target="_blank" class="card">
-      <img src="img/culto.jpeg" alt="Culto de Celebração Quarta-feira" class="img-center">
+      <img src="https://igrejaonline.github.io/ministeriomichelbreno/img/culto.jpeg" alt="Culto de Celebração" class="img-center">
       <div class="card-info">
         <h4>Culto de Celebração</h4>
         <p>Quarta-feira • 21:00h</p>
       </div>
     </a>
     <a href="https://chat.whatsapp.com/FWkipgvy7nH7lV8icxPCMk" target="_blank" class="card">
-      <img src="img/profetica.jpeg" alt="Noite Profética Sexta-feira" class="img-center">
+      <img src="https://igrejaonline.github.io/ministeriomichelbreno/img/profetica.jpeg" alt="Noite Profética" class="img-center">
       <div class="card-info">
         <h4>Noite Profética</h4>
         <p>Sexta-feira • 22:00h</p>
@@ -282,11 +298,11 @@ footer{
 <section id="contato" style="text-align: center; padding-bottom: 0;">
   <h2 class="title">Participe dos Cultos</h2>
   <div class="cta">
-    <a href="https://youtube.com/@apmichelbreno" target="_blank" class="btn btn-yt">
+    <a href="https://www.youtube.com/@apostolomichelbreno" target="_blank" class="btn btn-yt">
        <i class="fab fa-youtube"></i> Inscreva-se no YouTube
     </a>
-    <a href="https://instagram.com/mapro.brasil" target="_blank" class="btn btn-gold">
-       <i class="fab fa-instagram"></i> Instagram MAPRO
+    <a href="https://instagram.com/ministeriomichelbreno" target="_blank" class="btn btn-gold">
+       <i class="fab fa-instagram"></i> Instagram Ministério
     </a>
     <a href="https://instagram.com/apostolomichelbreno" target="_blank" class="btn btn-gold">
        <i class="fab fa-instagram"></i> Instagram Apóstolo
@@ -300,15 +316,15 @@ footer{
 <section id="formacao">
   <h2 class="title">Formação Online</h2>
   <div class="grid-cards">
-    <a href="https://igrejaonline.github.io/mapro/page/despertar_profetico.html" target="_blank" class="card">
-      <img src="img/despertar.jpeg" alt="Curso Despertar Profético MAPRO" class="img-top">
+    <a href="https://igrejaonline.github.io/kellyramos/" target="_blank" class="card">
+      <img src="https://igrejaonline.github.io/ministeriomichelbreno/img/despertar.jpeg" alt="Curso Despertar Profético" class="img-top">
       <div class="card-info">
         <h4>Despertar Profético</h4>
         <p>Acesse o treinamento</p>
       </div>
     </a>
-    <a href="https://igrejaonline.github.io/mapro/page/desvendando_sonhos.html" target="_blank" class="card">
-      <img src="img/desvendando.jpeg" alt="Curso Desvendando os Sonhos MAPRO" class="img-top">
+    <a href="https://igrejaonline.github.io/ministeriomichelbreno/page/desvendando_sonhos.html" target="_blank" class="card">
+      <img src="https://igrejaonline.github.io/ministeriomichelbreno/img/desvendando.jpeg" alt="Curso Desvendando os Sonhos" class="img-top">
       <div class="card-info">
         <h4>Desvendando os Sonhos</h4>
         <p>Acesse o treinamento</p>
@@ -318,10 +334,10 @@ footer{
 </section>
 
 <section id="atendimento">
-  <h2 class="title">Cuidado com a Alma</h2>
+  <h2 class="title">Cuidados com a alma</h2>
   <div class="grid-cards">
-    <a href="https://igrejaonline.github.io/mapro/page/psicoterapeuta_crista.html" target="_blank" class="card" style="margin: auto; max-width: 800px;">
-      <img src="img/eliane-home.jpeg" alt="Eliane Cristina - Psicoterapia Cristã MAPRO" class="img-top" style="height: 440px;">
+    <a href="https://igrejaonline.github.io/elianecristina/" target="_blank" class="card" style="margin: auto; max-width: 800px;">
+      <img src="https://igrejaonline.github.io/ministeriomichelbreno/img/eliane-home.jpeg" alt="Eliane Cristina" class="img-top" style="height: 440px;">
       <div class="card-info">
         <h4>Psicoterapia Cristã</h4>
         <p>Com Eliane Cristina</p>
@@ -330,11 +346,12 @@ footer{
     </a>
   </div>
 
-  <div class="qr-box">
-    <h3 style="color: var(--dourado); margin-bottom: 20px; text-transform: uppercase;">Contribua com o Reino</h3>
-    <img src="img/qrcode.jpeg" alt="Pix QR Code para doações MAPRO" class="qr-img">
-    <span class="chave-pix">mapro.brasil@gmail.com</span>
-    <span class="apoio-texto">Apoie este ministério 100% online via PIX</span>
+  <div class="pix-box">
+    <h3>Contribua com o Reino</h3>
+    <button class="btn-pix" onclick="copyPix()">
+      <i class="fas fa-hand-holding-heart"></i> Apoie este ministério
+    </button>
+    <span id="pix-confirm">Chave pix copiada.</span>
   </div>
 </section>
 
@@ -342,18 +359,18 @@ footer{
   <a href="https://chat.whatsapp.com/FWkipgvy7nH7lV8icxPCMk" target="_blank" class="btn btn-wpp float-btn">
     <i class="fab fa-whatsapp"></i> Comunidade
   </a>
-  <a href="https://youtube.com/@apmichelbreno" target="_blank" class="btn btn-yt float-btn">
+  <a href="https://www.youtube.com/@apostolomichelbreno" target="_blank" class="btn btn-yt float-btn">
     <i class="fab fa-youtube"></i> Ministrações
   </a>
 </div>
 
 <footer>
   <div class="footer-socials">
-    <a href="https://instagram.com/mapro.brasil" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://youtube.com/@apmichelbreno" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://instagram.com/ministeriomichelbreno" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@apostolomichelbreno" target="_blank"><i class="fab fa-youtube"></i></a>
     <a href="https://chat.whatsapp.com/FWkipgvy7nH7lV8icxPCMk" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
-  © 2025 MAPRO – Ministério Apostólico Caminho Profético<br>
+  © 2025 – Ministério Apostólico Michel Breno<br>
   Uma igreja dirigida por propósitos bíblicos.
 </footer>
 
@@ -364,9 +381,16 @@ function toggleMenu(){
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
   }
 }
-</script>
 
-<script data-goatcounter="https://mapro.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+function copyPix() {
+  const pixKey = "6e5e9543-78aa-46a1-925e-3f2b7f3ee81a";
+  navigator.clipboard.writeText(pixKey).then(() => {
+    const confirmMsg = document.getElementById('pix-confirm');
+    confirmMsg.style.opacity = '1';
+    setTimeout(() => { confirmMsg.style.opacity = '0'; }, 3000);
+  });
+}
+</script>
 
 </body>
 </html>
