@@ -1,9 +1,25 @@
-<div style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
-  <iframe 
-    src="https://ministeriomichelbreno.com.br" 
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-    title="Ministério Michel Breno"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-</div>
+<?php
+// 1º MÉTODO: Redirecionamento de Servidor (PHP) - O mais potente
+header("Location: https://ministeriomichelbreno.com.br", true, 301);
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="refresh" content="0; url=https://ministeriomichelbreno.com.br">
+    
+    <title>Redirecionando...</title>
+    
+    <script type="text/javascript">
+        // 3º MÉTODO: Location Replace (JavaScript) - O reforço final
+        // O "replace" é melhor que o "href" porque não deixa a página antiga no histórico do botão 'voltar'
+        window.location.replace("https://ministeriomichelbreno.com.br");
+    </script>
+</head>
+<body>
+    <p>Você está sendo redirecionado para o Ministério Michel Breno...</p>
+    <p>Se não for redirecionado em 2 segundos, <a href="https://ministeriomichelbreno.com.br">clique aqui</a>.</p>
+</body>
+</html>
